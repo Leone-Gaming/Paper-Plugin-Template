@@ -1,0 +1,10 @@
+name: PluginTemplate
+version: '1.0-SNAPSHOT'
+main: net.leonemc.example.ExamplePlugin
+api-version: '1.20'
+loader: net.leonemc.example.ExamplePluginLoader
+dependencies:
+  server:
+    Neon:
+      load: BEFORE
+      required: true
