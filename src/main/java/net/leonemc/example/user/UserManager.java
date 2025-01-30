@@ -238,7 +238,7 @@ public class UserManager {
      * @param name the name of the player
      * @return the user
      */
-    public User create(UUID uuid, String name) {
+    public @NotNull User create(@NotNull UUID uuid, @NotNull String name) {
         if (!users.containsKey(uuid)) {
             users.put(uuid, new User(uuid, name));
         }
