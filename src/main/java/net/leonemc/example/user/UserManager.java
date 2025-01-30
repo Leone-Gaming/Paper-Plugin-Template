@@ -208,7 +208,7 @@ public class UserManager {
      * @param name the name
      * @return a future with the user. The future will be run on the main thread by default!
      */
-    public CompletableFuture<User> fetchOrNew(@NotNull UUID uuid, @NotNull String name) {
+    public CompletableFuture<@NotNull User> fetchOrNew(@NotNull UUID uuid, @NotNull String name) {
         final CompletableFuture<User> future = new CompletableFuture<>();
 
         CompletableFuture.runAsync(() -> {
