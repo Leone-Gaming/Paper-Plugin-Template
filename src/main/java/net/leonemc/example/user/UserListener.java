@@ -47,6 +47,7 @@ public class UserListener implements Listener {
             return;
         }
 
+        // Intentional null check to maintain safety
         if (user == null) {
             event.setLoginResult(AsyncPlayerPreLoginEvent.Result.KICK_OTHER);
             event.kickMessage(Component.text("Your user data was not loaded at the pre login stage, please try logging in again. [#1]", NamedTextColor.RED));
@@ -70,6 +71,7 @@ public class UserListener implements Listener {
     public void onPlayerLogin(PlayerLoginEvent event) {
         final User user = userManager.get(event.getPlayer());
 
+        // Intentional null check to maintain safety
         if (user == null) {
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Component.text("Your user data was not loaded at the pre login stage, please try logging in again. [#2]", NamedTextColor.RED));
         }
@@ -80,6 +82,7 @@ public class UserListener implements Listener {
         final User user = userManager.get(event.getPlayer());
         final Player player = event.getPlayer();
 
+        // Intentional null check to maintain safety
         if (user == null) {
             player.kick(Component.text("Your user data was not loaded at the pre login stage, please try logging in again. [#3]", NamedTextColor.RED));
         }
